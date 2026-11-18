@@ -1,0 +1,152 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: rgb(98, 6, 81);
+  min-height: 100vh;         
+  display: flex;              
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+}
+
+/* ===== COLORES SEGÚN EL TIPO DE SESIÓN =====*/
+body.trabajo {
+  background-color: #f793d2;
+}
+
+body.descansoCorto {
+  background-color: #f40bba;
+}
+
+body.descansoLargo {
+  background-color: #edaf05;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.contenedor {
+  width: 100%;
+  max-width: 420px;           /* en pantallas grandes no se estira de más */
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+/* Texto que dice el tipo de sesión */
+#tipo-sesion {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+/* ===== EL TIEMPO ===== */
+#tiempo {
+  /*el número crece o se achica según el ancho de la pantalla */
+  font-size: clamp(4rem, 20vw, 6rem);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;                  /* espacio entre botones */
+  flex-wrap: wrap;            /* si no caben, bajan a otra línea (celular) */
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(249, 107, 228);
+  color: #000000;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc75f5;
+}
+
+/* Botón deshabilitado: se ve apagado y no muestra la manito */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Contorno visible cuando se navega con el teclado */
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #d3f513;
+  outline-offset: 2px;
+}
+
+.texto-contador {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.configuracion {
+  background-color: rgb(93, 7, 69);
+  color: #f50699;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.configuracion h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;             /* cada label en su propia línea */
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #f768e1;
+  border-radius: 6px;
+}
+
+/* El botón Guardar tiene otro color para distinguirlo */
+.configuracion button {
+  margin-top: 14px;
+  width: 100%;
+  background-color: #fa07d2;
+  color: rgb(10, 0, 8);
+}
+
+.configuracion button:hover {
+  background-color: #760598;
+}
+
+#mensaje-config {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* PANTALLAS PEQUEÑAS */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 10px 14px;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 21</title>
+  <link rel="stylesheet" href="pagina.css">
+</head>
+<body class="trabajo">
+  <main class="contenedor">
+
+    <h1>TIEMPO PRODUCTIVO</h1>
+
+    <p id="tipo-sesion" aria-live="polite">Trabajo</p>
+
+    <div id="tiempo" role="timer" aria-label="Tiempo restante">25:00</div>
+
+    <div class="botones">
+      <button id="btn-iniciar" type="button">Iniciar</button>
+      <button id="btn-pausar" type="button">Pausar</button>
+      <button id="btn-reiniciar" type="button">Reiniciar</button>
+    </div>
+
+    <p class="texto-contador">
+      Sesiones de trabajo completadas: <span id="contador">0</span>
+    </p>
+
+    <section class="configuracion" aria-labelledby="titulo-config">
+      <h2 id="titulo-config">Configuración (en minutos)</h2>
+
+      <form id="form-config">
+        <label for="input-trabajo">Trabajo</label>
+        <input id="input-trabajo" type="number" min="1" max="180" value="25">
+
+        <label for="input-corto">Descanso corto</label>
+        <input id="input-corto" type="number" min="1" max="180" value="5">
+
+        <label for="input-largo">Descanso largo</label>
+        <input id="input-largo" type="number" min="1" max="180" value="15">
+
+        <button type="submit">Guardar</button>
+      </form>
+
+      <p id="mensaje-config" role="status"></p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
